@@ -4,7 +4,6 @@ import path from 'path'
 
 export default defineConfig({
   base: '/Newsoftheweek/',
-  root: '.', // 👈 top-level dir is the root now
   build: {
     outDir: 'dist',
     emptyOutDir: true,
