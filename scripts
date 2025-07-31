@@ -1,0 +1,5 @@
+"scripts": {
+  ...
+  "frontend:build": "vite build",
+  "frontend:deploy": "gh-pages -d dist"
+}
