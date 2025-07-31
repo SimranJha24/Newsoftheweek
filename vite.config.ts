@@ -14,7 +14,6 @@ export default defineConfig(async () => {
 
   return {
     base: '/Newsoftheweek/',
-    root: path.resolve(__dirname, 'client'),
     build: {
       outDir: path.resolve(__dirname, 'dist'),
       emptyOutDir: true,
