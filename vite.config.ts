@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  base: '/Newsoftheweek/',
+  base: '/Newsoftheweek/', // for GitHub Pages
   plugins: [react()],
   build: {
     outDir: 'dist',
@@ -11,7 +11,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname),
     },
   },
 })
