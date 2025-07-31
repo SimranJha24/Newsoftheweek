@@ -4,11 +4,11 @@ import path from 'path'
 
 export default defineConfig({
   base: '/Newsoftheweek/',
+  plugins: [react()],
   build: {
     outDir: 'dist',
     emptyOutDir: true,
   },
-  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
