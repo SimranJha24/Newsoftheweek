@@ -1,21 +1,21 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
-const isReplit = process.env.REPL_ID !== undefined;
-const isProd = process.env.NODE_ENV === "production";
-
-export default defineConfig(async () => {
-  const plugins = [
-    react(),
-    runtimeErrorOverlay(),
-  ];
-
-  if (!isProd && isReplit) {
-    const { cartographer } = await import("@replit/vite-plugin-cartographer");
-    plugins.push(cartographer());
-  }
+export default defineConfig({
+  base: '/Newsoftheweek/', // required for GitHub Pages
+  root: path.resolve(__dirname, 'client'),
+  build: {
+    outDir: path.resolve(__dirname, 'dist'),
+    emptyOutDir: true,
+  },
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'client', 'src'),
+    },
+  },
+})
 
   return {
     base: '/Newsoftheweek/', // ✅ Required for GitHub Pages
